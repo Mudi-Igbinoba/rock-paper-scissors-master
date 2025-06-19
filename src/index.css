@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Barlow Semi Condensed', 'sans-serif';
+  --color-dark-text: #3b4363;
+  --color-score-text: #2a46c0;
+  --color-header-outline: #606e85;
+  --color-scissors-0: #ec9e0e;
+  --color-scissors-100: #eca922;
+  --color-paper-0: #4865f4;
+  --color-paper-100: #5671f5;
+  --color-rock-0: #dc2e4e;
+  --color-rock-100: #dd405d;
+  --color-lizard-0: #834fe3;
+  --color-lizard-100: #8c5de5;
+  --color-spock-0: #40b9ce;
+  --color-spock-100: #52bed1;
+  --color-radial-0: #1f3756;
+  --color-radial-100: #141539;
+  --background-image-down: url('./assets/images/down.svg');
+
+  --inset-shadow-md: inset 0 2px 0 2px rgba(0, 0, 0, 0.25);
+  --inset-shadow-lg: inset 0 4px 0 4px rgba(0, 0, 0, 0.25);
+  --shadow-paper: 0 3px 0px 0px rgba(0, 0, 0, 0.25);
+  --shadow-paper-lg: 0 6px 0px 0px rgba(0, 0, 0, 0.25);
+  --spacing-34: 8.5rem;
+  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite both;
+  --animate-fade-in: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  @keyframes heartbeat {
+    from {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transform-origin: center center;
+      transform-origin: center center;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    10% {
+      -webkit-transform: scale(0.91);
+      transform: scale(0.91);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    17% {
+      -webkit-transform: scale(0.98);
+      transform: scale(0.98);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    33% {
+      -webkit-transform: scale(0.87);
+      transform: scale(0.87);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    45% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.outer-button {
+  @apply cursor-pointer lg:size-60 md:size-45 size-32   p-4 bg-linear-to-t/oklch  rounded-full flex justify-center items-center bg-clip-padding shadow-paper hover:shadow-paper-lg duration-700 ease-in-out;
+}
+
+.inner-button {
+  @apply rounded-full inset-shadow-md inset-shadow-[#B8BDD5]/30  bg-white lg:size-46 md:size-36 size-26 flex justify-center items-center group-hover:inset-shadow-lg duration-700 ease-in-out;
+}
+
+.paper {
+  @apply from-paper-0 to-paper-100 shadow-[#2844C2];
+}
+
+.scissors {
+  @apply from-scissors-0 to-scissors-100  shadow-[#C66C1B];
+}
+
+.rock {
+  @apply from-rock-0 to-rock-100 shadow-[#9D1736];
+}
+
+.lizard {
+  @apply from-lizard-0 to-lizard-100 shadow-[#50179a];
+}
+
+.spock {
+  @apply from-spock-0 to-spock-100 shadow-[#0d7382];
+}
+
+.button-icon {
+  @apply w-2/5;
+}
